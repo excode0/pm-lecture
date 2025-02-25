@@ -1,0 +1,18 @@
+npm install @prisma/client
+npm install --save-dev prisma
+npx prisma init
+#Buka file .env dan sesuaikan dengan informasi dari pgAdmin:
+DATABASE_URL="postgresql://postgres:yourpassword@localhost:5432/mydatabase"
+npx prisma migrate dev --name init
+
+npx prisma migrate dev --name add_auth
+
+
+npm install bcrypt
+npm install --save-dev @types/bcrypt
+
+
+npm install jsonwebtoken
+npm install --save-dev @types/jsonwebtoken
+
+npm install react-chartjs-2 chart.js
