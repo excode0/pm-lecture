@@ -45,7 +45,7 @@ export default function KriteriaPage() {
       <main className='flex-1 p-6'>
         <h1 className='text-2xl font-bold mb-4'>Kriteria Management</h1>
         <button
-          onClick={() => router.push('/dashboard/kriteria/add')}
+          onClick={() => router.push('/kriteria/add')}
           className='mb-4 bg-blue-600 text-white px-4 py-2 rounded flex items-center gap-2'
         >
           <FaPlus /> Tambah Kriteria
@@ -73,9 +73,7 @@ export default function KriteriaPage() {
                     <td className='p-2 border'>{kriteria?.bobot}</td>
                     <td className='p-2 border flex justify-center gap-2'>
                       <button
-                        onClick={() =>
-                          router.push('/dashboard/kriteria/' + kriteria.id)
-                        }
+                        onClick={() => router.push('/kriteria/' + kriteria.id)}
                         className='bg-yellow-500 text-white p-2 rounded'
                       >
                         <FaUserEdit />

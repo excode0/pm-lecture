@@ -13,6 +13,7 @@ export async function GET() {
         dosen: true,
       },
     });
+    console.log(penilaian);
     return NextResponse.json(penilaian);
   } catch (error) {
     return NextResponse.json(

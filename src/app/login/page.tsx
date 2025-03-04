@@ -3,35 +3,55 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaSpinner } from 'react-icons/fa';
+import { signIn } from 'next-auth/react';
+// import LanguageSwitcher from '@/components/LanguageSwitcher';
+// import { getLocale } from '@/lib/getLocale';
+// import { messages } from '@/lib/i18n';
 
 export default function Login() {
+  // const lang = await getLocale();
+  // const t = messages.hasOwnProperty(lang)
+  //   ? messages[lang as keyof typeof messages]
+  //   : messages['en'];
+
   const router = useRouter();
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: any; value: any } }) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
-    const res = await fetch('/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
+    // const res = await fetch('/api/auth/login', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(form),
+    // });
+
+    const res = await signIn('credentials', {
+      redirect: false,
+      email: form.email,
+      password: form.password,
     });
-
-    const data = await res.json();
     setLoading(false);
+    if (res?.error) {
+      setError('Login failed. Check email and password.');
+      return;
+    }
 
-    if (!res.ok) return setError(data.error || 'Login gagal, coba lagi.');
+    // const data = await res.json();
+    // setLoading(false);
 
-    localStorage.setItem('token', data.token);
-    router.push('/dashboard');
+    // if (!res.ok) return setError(data.error || 'Login gagal, coba lagi.');
+
+    // localStorage.setItem('token', data.token);
+    router.push('/');
   };
 
   return (
@@ -96,6 +116,8 @@ export default function Login() {
           </a>
         </p>
       </div>
+
+      {/* <LanguageSwitcher /> */}
     </div>
   );
 }

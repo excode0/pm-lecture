@@ -32,28 +32,28 @@ const SideBar = () => {
       </div>
       <nav className='space-y-4'>
         <a
-          href='/dashboard'
+          href='/'
           className='flex items-center space-x-3 p-3 rounded hover:bg-[#fcba03] transition'
         >
           <FaHome />
           <span>Dashboard</span>
         </a>
         <a
-          href='/dashboard/users'
+          href='/users'
           className='flex items-center space-x-3 p-3 rounded hover:bg-[#fcba03] transition'
         >
           <FaUser />
           <span>User</span>
         </a>
         <a
-          href='/dashboard/dosen'
+          href='/dosen'
           className='flex items-center space-x-3 p-3 rounded hover:bg-[#fcba03] transition'
         >
           <FaChalkboardTeacher />
           <span>Dosen</span>
         </a>
         <a
-          href='/dashboard/penilaian'
+          href='/penilaian'
           className='flex items-center space-x-3 p-3 rounded hover:bg-[#fcba03] transition'
         >
           <FaChalkboardTeacher />
@@ -62,28 +62,28 @@ const SideBar = () => {
         <div className='space-y-2'>
           <p className='text-gray-300 text-sm ml-3'>Metode</p>
           <a
-            href='/dashboard/dataset'
+            href='/dataset'
             className='flex items-center space-x-3 p-3 rounded hover:bg-[#fcba03] transition'
           >
             <FaDatabase />
             <span>Dataset</span>
           </a>
           <a
-            href='/dashboard/kriteria'
+            href='/kriteria'
             className='flex items-center space-x-3 p-3 rounded hover:bg-[#fcba03] transition'
           >
             <FaFilter />
             <span>Kriteria</span>
           </a>
           <a
-            href='/dashboard/subkriteria'
+            href='/subkriteria'
             className='flex items-center space-x-3 p-3 rounded hover:bg-[#fcba03] transition'
           >
             <FaFilter />
             <span>SubKriteria</span>
           </a>
           <a
-            href='/dashboard/proses'
+            href='/proses'
             className='flex items-center space-x-3 p-3 rounded hover:bg-[#fcba03] transition'
           >
             <FaCog />

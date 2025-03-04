@@ -70,7 +70,7 @@ export default function TambahPenilaian() {
       }
 
       toast.success('Penilaian berhasil ditambahkan!');
-      router.push('/dashboard/penilaian');
+      router.push('/penilaian');
     } catch (error) {
       console.error(error);
     } finally {
@@ -82,7 +82,17 @@ export default function TambahPenilaian() {
     <div className='flex min-h-screen bg-gray-100'>
       <SideBar />
       <main className='flex-1 p-6'>
-        <h1 className='text-2xl font-bold mb-4'>Tambah Penilaian</h1>
+        <div className='w-full flex justify-between items-center'>
+          <h2 className='text-3xl font-semibold mb-6 text-center text-gray-800'>
+            Add Penilaian
+          </h2>
+          <button
+            onClick={() => router.push('../penilaian')}
+            className='bg-gray-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-700 transition shadow-md'
+          >
+            Kembali
+          </button>
+        </div>
         <form
           onSubmit={handleSubmit}
           className='bg-white p-6 rounded shadow-md'

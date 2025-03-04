@@ -65,7 +65,7 @@ export default function PenilaianPage() {
       <main className='flex-1 p-6'>
         <h1 className='text-2xl font-bold mb-4'>Manajemen Penilaian</h1>
         <button
-          onClick={() => router.push('/dashboard/penilaian/add')}
+          onClick={() => router.push('/penilaian/add')}
           className='mb-4 bg-blue-600 text-white px-4 py-2 rounded flex items-center gap-2'
         >
           <FaPlus /> Tambah Penilaian
@@ -94,9 +94,7 @@ export default function PenilaianPage() {
                     key={item.id}
                     data={item}
                     onDelete={() => setDeletePenilaianID(item.id)}
-                    onEdit={() =>
-                      router.push('/dashboard/penilaian/' + item.id)
-                    }
+                    onEdit={() => router.push('/penilaian/' + item.id)}
                   />
                 ))}
               </tbody>

@@ -95,10 +95,11 @@ export async function PUT(
 // ✅ DELETE: Hapus user berdasarkan ID
 export async function DELETE(
   req: Request,
-  { params }: { params: { id: string } },
+  context: { params: Promise<{ id: string }> },
 ) {
   try {
-    const penilaianID = parseInt(params.id, 10);
+    const { id } = await context.params;
+    const penilaianID = parseInt(id, 10);
     if (isNaN(penilaianID)) {
       return NextResponse.json(
         { error: 'Invalid penilaian ID' },

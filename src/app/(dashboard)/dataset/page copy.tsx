@@ -86,6 +86,19 @@ export default function DatasetPage() {
               <h2 className='text-lg font-semibold'>
                 Profile Matching Dataset
               </h2>
+              <form className='space-y-5'>
+                <div>
+                  <label className='block text-gray-700 font-medium'>
+                    Nama
+                  </label>
+                  <input
+                    type='text'
+                    name='nama'
+                    placeholder='Masukkan Nama'
+                    className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition'
+                  />
+                </div>
+              </form>
 
               {/* Tampilkan Data Penilaian */}
               {loading ? (

@@ -87,10 +87,10 @@ export default function AddSubKriteria() {
       <main className='w-full px-6 py-10 flex flex-col'>
         <div className='w-full flex justify-between items-center'>
           <h2 className='text-3xl font-semibold mb-6 text-center text-gray-800'>
-            Tambah User
+            Add Sub-Kriteria
           </h2>
           <button
-            onClick={() => router.push('../users')}
+            onClick={() => router.push('../subkriteria')}
             className='bg-gray-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-700 transition shadow-md'
           >
             Kembali
